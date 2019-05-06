@@ -1,3 +1,6 @@
+import Head from '../head/Head';
+import List from '../list/List';
+
 import React, { Component } from 'react';
 import MidiPlayer from 'midi-player-js';
 import DatabaseService from '../../services/DatabaseService';
@@ -17,10 +20,10 @@ class Player extends Component {
           song: songBuffer
         })
         
-        var ac = new AudioContext;
+        var ac = new AudioContext();
         Soundfont.instrument(ac, 'lead_1_square').then(instrument => {
           Player = new MidiPlayer.Player(event => {
-            if (event.name == 'Note on') {
+            if (event.name === 'Note on') {
               console.log(event);
               instrument.play(event.noteName, ac.currentTime, {gain:event.velocity/50});
             }
@@ -29,15 +32,16 @@ class Player extends Component {
           Player.loadDataUri(this.state.song);
           Player.play();
         })
-
-
       }
     )
   }
 
   render() {
     return (
-      <h1> { this.state.song } </h1>
+		<div className="Player">
+			<Head />
+			<List />
+		</div>
     );
   }
 }
