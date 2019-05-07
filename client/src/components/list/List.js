@@ -14,6 +14,10 @@ class List extends Component {
 		return (
 			<div className='list'>
 				<SongInformation />
+				<SongInformation />
+				<SongInformation />
+				<SongInformation />
+				<SongInformation />
 			</div>
 		);
 	}

@@ -1,0 +1,49 @@
+.player {
+	display: grid;
+	text-align: center;
+
+	grid-template-rows: 25% 75%;
+}
+
+.head {
+	background-color: blue;
+	grid-row: 1;
+
+	display: flex;
+
+	.visualization { 
+		flex: 1;
+	}
+
+	.display {
+		flex: 3;
+
+		display: grid;
+		grid-template-rows: 50% 50%;
+
+		.information {
+			grid-row: 1;
+			background-color: green;
+		}
+
+		.controls {
+			grid-row: 2;
+			background-color: purple;
+		}
+	}
+}
+
+
+
+.list {
+	grid-row: 2;
+
+	display: grid;
+	grid-template-rows: repeat(20%);
+
+	.song-information {
+		background-color: red;
+		border-width: 1px;
+		border-color: black;
+	}
+}

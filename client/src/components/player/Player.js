@@ -1,6 +1,8 @@
 import Head from '../head/Head';
 import List from '../list/List';
 
+import '../App.scss';
+
 import React, { Component } from 'react';
 import MidiPlayer from 'midi-player-js';
 import DatabaseService from '../../services/DatabaseService';
@@ -38,7 +40,7 @@ class Player extends Component {
 
   render() {
     return (
-		<div className="Player">
+		<div className="player">
 			<Head />
 			<List />
 		</div>
