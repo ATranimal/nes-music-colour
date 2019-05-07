@@ -2,7 +2,10 @@
 	display: grid;
 	text-align: center;
 
+	height: 750px;
+	margin: 50px 35% 50px 35%;
 	grid-template-rows: 25% 75%;
+	transition: margin 0.5s;
 }
 
 .head {
@@ -45,5 +48,29 @@
 		background-color: red;
 		border-width: 1px;
 		border-color: black;
+	}
+}
+
+@media(max-width: 100em) {
+	.player {
+		margin: 50px 30% 50px 30%;
+	}
+}
+
+@media(max-width: 75em) {
+	.player {
+		margin: 50px 25% 50px 25%;
+	}
+}
+
+@media(max-width: 50em) {
+	.player {
+		margin: 30px 18% 30px 18%;
+	}
+}
+
+@media(max-width: 30em) {
+	.player {
+		margin: 30px 12% 30px 12%;
 	}
 }
