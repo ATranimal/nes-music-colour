@@ -1,13 +1,18 @@
-import Head from '../head/Head';
-import List from '../list/List';
-
 import '../App.scss';
 
 import React, { Component } from 'react';
+import { Provider as ReduxProvider } from "react-redux";
+import configureStore from "../../store/store";
+
 import MidiPlayer from 'midi-player-js';
-import DatabaseService from '../../services/DatabaseService';
 import axios from 'axios';
 import Soundfont from 'soundfont-player';
+
+import DatabaseService from '../../services/DatabaseService';
+import Head from '../head/Head';
+import List from '../list/List';
+
+const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 
 class Player extends Component {
   constructor(props) {
@@ -47,13 +52,15 @@ class Player extends Component {
 
   render() {
     return (
-		<div className="player">
-			<Head
-			  gameTitle={this.state.gameTitle}
-			  trackNumber={this.state.trackNumber}
-			/>
-			<List />
-		</div>
+		<ReduxProvider store={reduxStore}>
+			<div className="player">
+				<Head
+				gameTitle={this.state.gameTitle}
+				trackNumber={this.state.trackNumber}
+				/>
+				<List />
+			</div>
+		</ReduxProvider>
     );
   }
 }
